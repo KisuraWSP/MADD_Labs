@@ -16,7 +16,7 @@ fun circumferenceOfACircle(r : Double) : Double {
 
 // Q3
 fun greetings(name : String, age : Int) {
-    println("hello ${name} i am ${age}")    
+    println("hello ${name} i am ${age} years old")
     if (age < 18) {
         println("You are not eligible for the driving license. The age limit is 18")
     } else {
@@ -25,19 +25,20 @@ fun greetings(name : String, age : Int) {
 }
 
 
-// Q4 
+// Q4
 fun storeNames() {
     var i = 0
     val namesArray = mutableListOf<String>()
-    while(i < 5) {   
+    while(i < 5) {
+        print("enter name:")
         val store: String = readln()
         namesArray.add(store)
         i++
     }
-    
+
     for(i in 0..(namesArray.size - 1)) {
         println("Name ${i+1}: ${namesArray[i]}")
-    }
+    }
 }
 
 fun main() {
@@ -49,19 +50,19 @@ fun main() {
     println(3.14)
     println('c')
     println(true)
-    
+
     // Q2
     println("================Q2===========")
     val c1 = areaOfCircle(10.0)
     val c2 = circumferenceOfACircle(10.0)
     println(c1)
     println(c2)
-    
-    
+
+
     //Q3
     println("================Q3===========")
     greetings("John", 20)
-    
+
     //Q4
     println("================Q4===========")
     storeNames()
