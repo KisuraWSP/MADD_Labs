@@ -27,14 +27,37 @@ class BillCalculatorActivity : AppCompatActivity() {
         }
 
         calculateBtn.setOnClickListener {
-            val unitAmount = enterUnits.toString().toInt()
-            val fixedCharge = 150
-            val vat = 0.15
-            val unitCost = 29
-            val energyCharge = unitCost * unitAmount
-            val bill = fixedCharge + energyCharge + 300 + vat
+            val unitText = enterUnits.text.toString()
 
-            textField.text = "Electricity Bill: $bill"
+            if (unitText.isNotEmpty()) {
+                try {
+                    val unitAmount = unitText.toInt()
+                    val fixedCharge = 150.0
+                    val unitCost = 29.0
+                    val serviceCharge = 300.0
+                    val vatRate = 0.15
+
+                    val energyCharge = unitCost * unitAmount
+                    val subtotal = fixedCharge + energyCharge + serviceCharge
+                    val vatAmount = subtotal * vatRate
+                    val totalBill = subtotal + vatAmount
+
+                    textField.text = """
+                Fixed Charge: Rs. %.2f
+                Energy Charge: Rs. %.2f
+                Service Charge: Rs. %.2f
+                VAT (15%%): Rs. %.2f
+                
+                Total Bill: Rs. %.2f
+            """.trimIndent().format(fixedCharge, energyCharge, serviceCharge, vatAmount, totalBill)
+
+                } catch (e: NumberFormatException) {
+                    textField.text = "Invalid input. Please enter a valid number of units."
+                }
+            } else {
+                textField.text = "Please enter the number of units."
+            }
         }
+
     }
 }
