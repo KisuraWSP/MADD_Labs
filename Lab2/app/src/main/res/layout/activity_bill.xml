@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="375dp"
+        android:layout_height="73dp"
         android:layout_marginTop="92dp"
         android:ems="10"
         android:hint="enter units"
@@ -28,7 +28,7 @@
         android:id="@+id/textView"
         android:layout_width="339dp"
         android:layout_height="247dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="#FDFDFD"
         android:text="Electricity Bill"
         android:textColor="#FFFFFF"
@@ -39,14 +39,13 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="305dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="300dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="84dp"
         android:backgroundTint="#FFEB3B"
         android:text="Calculate"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
